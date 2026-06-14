@@ -1,0 +1,98 @@
+<div class="card-custom">
+    {% if torneio %}
+        <div class="d-flex justify-content-between align-items-center mb-4 border-bottom border-secondary pb-3">
+            <div>
+                <h4 class="fw-bold text-warning mb-0">{{ safe_get(torneio, "nome", "Torneio Ativo") }}</h4>
+                <span class="text-muted small">Gerenciamento dinâmico de chaves de eliminação simples</span>
+            </div>
+            <span class="badge bg-secondary">Torneio Selecionado</span>
+        </div>
+        
+        {% if chave %}
+            <style>
+                .bracket-container { display: flex; gap: 30px; overflow-x: auto; padding: 10px 0; }
+                .bracket-round { display: flex; flex-direction: column; justify-content: space-around; min-width: 280px; }
+                .match-card { background: #131924; border: 1px solid var(--border-color); border-radius: 6px; overflow: hidden; margin: 12px 0; }
+                .player-slot { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; font-size: 0.85rem; border-top: 1px solid var(--border-color); }
+                .slot-winner { color: #34d399; background: rgba(16, 185, 129, 0.08); font-weight: 700; }
+                .score-badge { background-color: #1c2436; color: white; font-weight: 800; min-width: 24px; text-align: center; border-radius: 4px; padding: 2px 6px; }
+                .slot-winner .score-badge { background-color: #10b981; }
+            </style>
+
+            <div class="bracket-container">
+                {% for fase in chave.fases %}
+                    <div class="bracket-round">
+                        <div class="round-header bg-dark p-2 rounded text-center small mb-2" style="font-size:0.7rem; font-weight:700;">{{ fase.nome_fase }}</div>
+                        {% for partida in fase.partidas %}
+                            <div class="match-card">
+                                <div class="p-2 bg-dark d-flex justify-content-between align-items-center" style="font-size: 0.65rem; color: var(--text-secondary);">
+                                    <span>Partida ID: #{{ partida.obter_id() }}</span>
+                                    {% set j1, j2 = partida.obter_jogadores() %}
+                                    {% if j1 and j2 and not partida.obter_vencedor() %}
+                                        <a href="#" class="text-warning text-decoration-none" onclick="abrirModalPlacar('{{ partida.obter_id() }}', '{{ j1.obter_nick() }}', '{{ j2.obter_nick() }}')">📝 Inserir Placar</a>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="player-slot {{ 'slot-winner' if partida.obter_vencedor() == j1 and j1 != None else '' }}">
+                                    <span>🎮 {{ j1.obter_nick() if j1 else 'Aguardando...' }}</span>
+                                    <span class="score-badge">{{ placares[partida.obter_id()|string][0] if placares[partida.obter_id()|string] else '-' }}</span>
+                                </div>
+                                
+                                <div class="player-slot {{ 'slot-winner' if partida.obter_vencedor() == j2 and j2 != None else '' }}">
+                                    <span>🎮 {{ j2.obter_nick() if j2 else 'Aguardando...' }}</span>
+                                    <span class="score-badge">{{ placares[partida.obter_id()|string][1] if placares[partida.obter_id()|string] else '-' }}</span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center py-5">
+                <p class="text-muted small">As chaves (Brackets) deste torneio ainda não foram geradas.</p>
+                <button class="btn btn-sm btn-accent" onclick="switchTab('tab-create')">Ir para Administração e Iniciar</button>
+            </div>
+        {% endif %}
+    {% else %}
+        <p class="text-muted text-center">Nenhum torneio ativo.</p>
+    {% endif %}
+</div>
+
+<div class="modal fade" id="scoreModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-secondary" style="background-color: var(--bg-card); color: white;">
+            <div class="modal-header border-secondary">
+                <h6 class="modal-title fw-bold">Definir Placar do Set</h6>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <form action="/reportar_placar" method="POST">
+                <input type="hidden" name="partida_id" id="modal_partida_id">
+                <div class="modal-body text-center">
+                    <div class="d-flex justify-content-center align-items-center gap-2">
+                        <div>
+                            <label class="d-block small text-muted mb-1 text-truncate" id="label_p1" style="max-width:90px;"></label>
+                            <input type="number" name="score1" class="form-control form-control-custom text-center fw-bold" min="0" value="0" required style="width: 70px;">
+                        </div>
+                        <span class="fw-bold text-secondary mt-3">X</span>
+                        <div>
+                            <label class="d-block small text-muted mb-1 text-truncate" id="label_p2" style="max-width:90px;"></label>
+                            <input type="number" name="score2" class="form-control form-control-custom text-center fw-bold" min="0" value="0" required style="width: 70px;">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="submit" class="btn btn-sm btn-accent w-100">Confirmar Vitória</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function abrirModalPlacar(partidaId, nick1, nick2) {
+        document.getElementById('modal_partida_id').value = partidaId;
+        document.getElementById('label_p1').innerText = nick1;
+        document.getElementById('label_p2').innerText = nick2;
+        new bootstrap.Modal(document.getElementById('scoreModal')).show();
+    }
+</script>
