@@ -1,0 +1,389 @@
+[
+  {
+    "nome": "Cuité Fight Night PRO",
+    "jogo": {
+      "nome": "Street Fighter 6",
+      "categoria": "Luta"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [
+      {
+        "id": 1,
+        "nome": "GamerA",
+        "email": "gamera@gg.com",
+        "nick": "GamerA"
+      },
+      {
+        "id": 2,
+        "nome": "GamerB",
+        "email": "gamerb@gg.com",
+        "nick": "GamerB"
+      },
+      {
+        "id": 3,
+        "nome": "GamerC",
+        "email": "gamerc@gg.com",
+        "nick": "GamerC"
+      },
+      {
+        "id": 4,
+        "nome": "GamerD",
+        "email": "gamerd@gg.com",
+        "nick": "GamerD"
+      }
+    ],
+    "limite_vagas": 8,
+    "plataforma": "PC / PS5",
+    "codigo_convite": "SF6-2026",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "Tekken Masters Cup",
+    "jogo": {
+      "nome": "Tekken 8",
+      "categoria": "Luta"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [
+      {
+        "id": 5,
+        "nome": "KazuyaPro",
+        "email": "kazuya@gg.com",
+        "nick": "KazuyaPro"
+      },
+      {
+        "id": 6,
+        "nome": "JinMaster",
+        "email": "jin@gg.com",
+        "nick": "JinMaster"
+      },
+      {
+        "id": 7,
+        "nome": "Heihachi_99",
+        "email": "heihachi@gg.com",
+        "nick": "Heihachi_99"
+      },
+      {
+        "id": 8,
+        "nome": "KingPlayer",
+        "email": "king@gg.com",
+        "nick": "KingPlayer"
+      }
+    ],
+    "limite_vagas": 8,
+    "plataforma": "PS5",
+    "codigo_convite": "TEKKEN-2026",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "Mortal Kombat Tournament",
+    "jogo": {
+      "nome": "Mortal Kombat 1",
+      "categoria": "Luta"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [
+      {
+        "id": 9,
+        "nome": "ScorpionMain",
+        "email": "scorpion@gg.com",
+        "nick": "ScorpionMain"
+      },
+      {
+        "id": 10,
+        "nome": "SubZeroPro",
+        "email": "subzero@gg.com",
+        "nick": "SubZeroPro"
+      },
+      {
+        "id": 11,
+        "nome": "LiuKang_99",
+        "email": "liukang@gg.com",
+        "nick": "LiuKang_99"
+      },
+      {
+        "id": 12,
+        "nome": "RaidenPlayer",
+        "email": "raiden@gg.com",
+        "nick": "RaidenPlayer"
+      }
+    ],
+    "limite_vagas": 8,
+    "plataforma": "Multiplataforma",
+    "codigo_convite": "MK1-2026",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "2XKO Championship",
+    "jogo": {
+      "nome": "2XKO",
+      "categoria": "Luta"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [
+      {
+        "id": 13,
+        "nome": "EchoFighter",
+        "email": "echo@gg.com",
+        "nick": "EchoFighter"
+      },
+      {
+        "id": 14,
+        "nome": "ShadowStrike",
+        "email": "shadow@gg.com",
+        "nick": "ShadowStrike"
+      },
+      {
+        "id": 15,
+        "nome": "NeonBlade",
+        "email": "neon@gg.com",
+        "nick": "NeonBlade"
+      },
+      {
+        "id": 16,
+        "nome": "CyberRush",
+        "email": "cyber@gg.com",
+        "nick": "CyberRush"
+      }
+    ],
+    "limite_vagas": 8,
+    "plataforma": "PC",
+    "codigo_convite": "2XKO-2026",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "Valorant Champions Tour",
+    "jogo": {
+      "nome": "Valorant",
+      "categoria": "FPS"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [
+      {
+        "id": 17,
+        "nome": "SovaMain",
+        "email": "sova@gg.com",
+        "nick": "SovaMain"
+      },
+      {
+        "id": 18,
+        "nome": "JettGod",
+        "email": "jett@gg.com",
+        "nick": "JettGod"
+      },
+      {
+        "id": 19,
+        "nome": "PhoenixFire",
+        "email": "phoenix@gg.com",
+        "nick": "PhoenixFire"
+      },
+      {
+        "id": 20,
+        "nome": "RazePlayer",
+        "email": "raze@gg.com",
+        "nick": "RazePlayer"
+      }
+    ],
+    "limite_vagas": 8,
+    "plataforma": "PC",
+    "codigo_convite": "VALORANT-2026",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "CS2 Major League",
+    "jogo": {
+      "nome": "Counter-Strike 2",
+      "categoria": "FPS"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [
+      {
+        "id": 21,
+        "nome": "AWPGod",
+        "email": "awp@gg.com",
+        "nick": "AWPGod"
+      },
+      {
+        "id": 22,
+        "nome": "EntryFrag",
+        "email": "entry@gg.com",
+        "nick": "EntryFrag"
+      },
+      {
+        "id": 23,
+        "nome": "ClutchKing",
+        "email": "clutch@gg.com",
+        "nick": "ClutchKing"
+      },
+      {
+        "id": 24,
+        "nome": "IGL_Pro",
+        "email": "igl@gg.com",
+        "nick": "IGL_Pro"
+      }
+    ],
+    "limite_vagas": 8,
+    "plataforma": "PC",
+    "codigo_convite": "CS2-2026",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "LoL Championship Series",
+    "jogo": {
+      "nome": "League of Legends",
+      "categoria": "MOBA"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [
+      {
+        "id": 25,
+        "nome": "FakerFan",
+        "email": "faker@gg.com",
+        "nick": "FakerFan"
+      },
+      {
+        "id": 26,
+        "nome": "MidGod",
+        "email": "mid@gg.com",
+        "nick": "MidGod"
+      },
+      {
+        "id": 27,
+        "nome": "JungleMain",
+        "email": "jungle@gg.com",
+        "nick": "JungleMain"
+      },
+      {
+        "id": 28,
+        "nome": "TopLane",
+        "email": "top@gg.com",
+        "nick": "TopLane"
+      }
+    ],
+    "limite_vagas": 8,
+    "plataforma": "PC",
+    "codigo_convite": "LOL-2026",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "Rocket League Open",
+    "jogo": {
+      "nome": "Rocket League",
+      "categoria": "Esporte"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [
+      {
+        "id": 29,
+        "nome": "AerialGod",
+        "email": "aerial@gg.com",
+        "nick": "AerialGod"
+      },
+      {
+        "id": 30,
+        "nome": "RocketPro",
+        "email": "rocket@gg.com",
+        "nick": "RocketPro"
+      },
+      {
+        "id": 31,
+        "nome": "GoalMaster",
+        "email": "goal@gg.com",
+        "nick": "GoalMaster"
+      },
+      {
+        "id": 32,
+        "nome": "Freestyler",
+        "email": "free@gg.com",
+        "nick": "Freestyler"
+      }
+    ],
+    "limite_vagas": 8,
+    "plataforma": "Multiplataforma",
+    "codigo_convite": "RL-2026",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "asksndnlkvsld",
+    "jogo": {
+      "nome": "Street Fighter 6",
+      "categoria": "Luta"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [],
+    "limite_vagas": 8,
+    "plataforma": "PC",
+    "codigo_convite": "GG-PRO",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "sim",
+    "jogo": {
+      "nome": "Mario Kart 8",
+      "categoria": "Corrida"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [],
+    "limite_vagas": 90,
+    "plataforma": "PC",
+    "codigo_convite": "GG-PRO",
+    "inscricoes_abertas": true
+  },
+  {
+    "nome": "seupai",
+    "jogo": {
+      "nome": "Granblue Fantasy Versus",
+      "categoria": "Luta"
+    },
+    "organizador": {
+      "id": 1,
+      "nome": "Pedro",
+      "email": "pedro@bracketmaker.com"
+    },
+    "participantes": [],
+    "limite_vagas": 8,
+    "plataforma": "PC",
+    "codigo_convite": "GG-PRO",
+    "inscricoes_abertas": true
+  }
+]

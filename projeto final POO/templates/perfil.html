@@ -1,0 +1,120 @@
+<!-- templates/perfil.html - Sem CSS interno, usando style.css -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - BRACKET.HUB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sgg-sidebar">
+        <div class="sidebar-top">
+            <div class="sidebar-brand" onclick="window.location.href='/'">BRACKET.HUB</div>
+            <div class="sidebar-menu">
+                <button class="sidebar-link" onclick="window.location.href='/'">Voltar</button>
+                <button class="sidebar-link active">Meu Perfil</button>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <button class="sidebar-link" onclick="window.location.href='/logout'" style="color: var(--danger-color);">
+                Sair
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="sgg-topbar">
+            <h5 class="text-white m-0">Meu Perfil</h5>
+        </div>
+
+        <div class="container-fluid p-4">
+            <div class="profile-card">
+                <div class="card-custom">
+                    <div class="text-center">
+                        <div class="profile-avatar">
+                            {{ usuario.nick[0]|upper if usuario.nick else '👤' }}
+                        </div>
+                        <h4 class="text-white">{{ usuario.nome }}</h4>
+                        <p class="text-secondary small">@{{ usuario.nick }}</p>
+                        <p class="text-muted small">{{ usuario.email }}</p>
+                        {% if usuario.discord %}
+                            <span class="badge bg-info">Discord: {{ usuario.discord }}</span>
+                        {% endif %}
+                    </div>
+
+                    <hr class="border-secondary">
+
+                    <!-- Formulário de Edição -->
+                    <form action="/atualizar_perfil" method="POST">
+                        <div class="profile-section">
+                            <h6 class="fw-bold text-warning mb-3">Informações Pessoais</h6>
+                            <div class="mb-3">
+                                <label class="small text-secondary fw-bold">Nome Completo</label>
+                                <input type="text" name="nome" class="form-control form-control-custom" value="{{ usuario.nome }}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="small text-secondary fw-bold">Nickname</label>
+                                <input type="text" name="nick" class="form-control form-control-custom" value="{{ usuario.nick }}" required>
+                                <small class="text-muted">Seu identificador público na plataforma</small>
+                            </div>
+                            <div class="mb-0">
+                                <label class="small text-secondary fw-bold">Discord</label>
+                                <input type="text" name="discord" class="form-control form-control-custom" value="{{ usuario.discord or '' }}" placeholder="Ex: Usuario#1234">
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-accent w-100">Salvar Alterações</button>
+                        </div>
+                    </form>
+
+                    <hr class="border-secondary mt-4">
+
+                    <!-- Excluir Conta -->
+                    <div class="text-center">
+                        <button type="button" class="btn btn-danger-outline" data-bs-toggle="modal" data-bs-target="#excluirContaModal">
+                            Excluir Conta
+                        </button>
+                        <p class="text-muted small mt-2">Esta ação é permanente e não pode ser desfeita.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Excluir Conta -->
+<div class="modal fade" id="excluirContaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-secondary" style="background-color: var(--bg-card); color: white;">
+            <div class="modal-header border-secondary">
+                <h6 class="modal-title fw-bold text-danger">Excluir Conta</h6>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <form action="/excluir_conta" method="POST">
+                <div class="modal-body">
+                    <p class="text-secondary">Tem certeza que deseja excluir sua conta permanentemente?</p>
+                    <p class="text-danger small">Esta ação não pode ser desfeita. Todos os seus dados serão removidos.</p>
+                    <div class="mb-3">
+                        <label class="small text-secondary fw-bold">Digite sua senha para confirmar</label>
+                        <input type="password" name="senha" class="form-control form-control-custom" placeholder="Sua senha" required>
+                    </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-outline-light btn-sm" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger btn-sm">Confirmar Exclusão</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
