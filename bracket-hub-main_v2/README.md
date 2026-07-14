@@ -12,7 +12,7 @@ Baixe o projeto como ZIP e extraia em uma pasta no seu computador.
 
 ### 2. Abrir o Terminal na Pasta do Projeto
 
-Abra a pasta onde voce extraiu o projeto, clique na barra de enderecos da pasta, digite `cmd` e pressione Enter. O terminal abrira dentro da pasta do projeto.
+Abra a pasta onde voce extraiu o projeto, clique na barra de enderecos da pasta, digite `cmd` ou no terminal do VSCode e pressione Enter. O terminal abrira dentro da pasta do projeto.
 
 ### 3. Criar Ambiente Virtual
 
@@ -36,8 +36,7 @@ No terminal, digite `python app.py` e pressione Enter. O servidor iniciara e mos
 
 ### 8. Acessar o Site
 
-Abra seu navegador e digite `http://localhost:5005` na barra de enderecos. O site abrira na sua tela.
-
+Abra seu navegador e digite `http://localhost:5005` na barra de enderecos. Mas também no proprio cmd/terminal dara um link pra ir direto ao site ex: `ttp://127.0.0.1:5005`
 ### 9. Fazer Login
 
 No topo da pagina, clique em "Entrar / Cadastrar". Use as credenciais: E-mail: alan@gg.com, Senha: 123. Clique em "Acessar Plataforma" para entrar.
@@ -77,30 +76,3 @@ Limpe os cookies do seu navegador.
 ### O bracket nao gera
 
 Tenha exatamente 2, 4, 8 ou 16 jogadores no torneio antes de gerar a chave.
-
----
-
-## INFORMACOES ADICIONAIS
-
-### Credenciais Padrao
-
-E-mail: alan@gg.com
-Senha: 123
-Papel: Administrador
-
-### Estrutura do Projeto
-
-- app.py - Arquivo principal
-- reset_db.py - Configurar banco de dados
-- database/ - Dados do sistema
-- sgg_core/ - Funcionalidades principais
-- templates/ - Paginas HTML
-- static/ - Estilos e scripts
-
-### Tecnologias Utilizadas
-
-Python, Flask, Bootstrap, HTML, CSS e JavaScript.
-
----
-
-Desenvolvido por - Seu Nome
