@@ -1,0 +1,51 @@
+<!-- templates/home.html - Torneios ativos sem emojis -->
+
+<div class="d-flex gap-2 flex-wrap mb-4">
+    <button class="filter-badge active" onclick="filtrarPorJogo('todos')">Todos os Jogos</button>
+    {% set jogos_unicos = [] %}
+    {% for ev in featured_events %}
+        {% if ev.jogo_nome not in jogos_unicos %}
+            {% set _ = jogos_unicos.append(ev.jogo_nome) %}
+            <button class="filter-badge" onclick="filtrarPorJogo('{{ ev.jogo_nome }}')">{{ ev.jogo_nome }}</button>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<div class="section-title">Torneios Disponíveis</div>
+<div class="event-grid" id="homeEventGrid">
+    {% for ev in featured_events %}
+    <div class="event-card-sgg" 
+         data-jogo="{{ ev.jogo_nome }}" 
+         data-nome="{{ ev.nome|e }}"
+         data-jogo-nome="{{ ev.jogo_nome|e }}"
+         data-plataforma="{{ ev.plataforma|e }}"
+         data-codigo="{{ ev.codigo_convite|e }}"
+         data-limite="{{ ev.limite_vagas }}"
+         data-participantes='{{ ev.participantes|tojson }}'
+         data-index="{{ ev.index }}"
+         onclick="abrirCardTorneio(this)">
+        <img src="{{ ev.banner if ev.banner else 'https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=600' }}" class="event-banner" alt="banner">
+        <div class="event-info-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="event-badge-open">{{ ev.status }}</div>
+                <span class="text-warning fw-bold" style="font-size: 0.7rem;">COD: {{ ev.codigo_convite }}</span>
+            </div>
+            <h6 class="event-name-title mt-1">{{ ev.nome }}</h6>
+            <span class="text-muted small">Jogo: {{ ev.jogo_nome }}</span>
+            <div class="text-secondary small mt-2 pt-2 border-top border-dark">
+                Plataforma: {{ ev.plataforma }} <br>
+                Inscritos: {{ ev.inscritos_qtd }} / {{ ev.limite_vagas }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="section-title mt-5">Todos os Jogos Disponíveis ({{ jogos|length }})</div>
+<div class="d-flex flex-wrap gap-2 mb-4">
+    {% for jogo in jogos %}
+        <span class="game-tag {{ jogo.obter_categoria()|lower|replace(' ', '-') }}">
+            {{ jogo.obter_nome() }}
+        </span>
+    {% endfor %}
+</div>

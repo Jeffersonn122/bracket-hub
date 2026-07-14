@@ -1,0 +1,42 @@
+<!-- templates/admin_panel.html - Painel admin sem emojis -->
+
+<div class="card-custom">
+    <h4 class="fw-bold mb-4 text-white border-bottom border-secondary pb-2">Painel de Controle: <span id="txtNomeTorneioFoco" class="text-warning">Selecione um Torneio na Home</span></h4>
+    
+    <div class="admin-layout">
+        <div class="admin-nav-side">
+            <button class="admin-nav-btn active" id="admin-btn-jogadores" onclick="switchAdminSubPane('sub-jogadores')">Competidores e Check-in</button>
+            <button class="admin-nav-btn" id="admin-btn-editar" onclick="switchAdminSubPane('sub-editar')">Editar Torneio</button>
+            <button class="admin-nav-btn text-warning fw-bold" id="admin-btn-bracket" onclick="switchAdminSubPane('sub-bracket')">Bracket</button>
+            <button class="admin-nav-btn" id="admin-btn-disputas" onclick="switchAdminSubPane('sub-disputas')">Controle de Disputas</button>
+            <button class="admin-nav-btn" id="admin-btn-overlay" onclick="switchAdminSubPane('sub-overlay')">Transmissao / Overlay OBS</button>
+        </div>
+
+        <div class="admin-pane">
+            <!-- Sub-painel: Jogadores -->
+            <div class="admin-sub-content" id="sub-jogadores">
+                {% include 'admin_players.html' %}
+            </div>
+
+            <!-- Sub-painel: Editar -->
+            <div class="admin-sub-content d-none" id="sub-editar">
+                {% include 'admin_edit.html' %}
+            </div>
+
+            <!-- Sub-painel: Bracket -->
+            <div class="admin-sub-content d-none" id="sub-bracket">
+                {% include 'bracket.html' %}
+            </div>
+
+            <!-- Sub-painel: Disputas -->
+            <div class="admin-sub-content d-none" id="sub-disputas">
+                {% include 'admin_disputes.html' %}
+            </div>
+
+            <!-- Sub-painel: Overlay -->
+            <div class="admin-sub-content d-none" id="sub-overlay">
+                {% include 'admin_overlay.html' %}
+            </div>
+        </div>
+    </div>
+</div>

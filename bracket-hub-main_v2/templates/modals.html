@@ -1,0 +1,59 @@
+<!-- templates/modals.html - Modais sem emojis -->
+
+<!-- Modal de Pontuacao -->
+<div class="modal fade" id="scoreModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content border-secondary" style="background-color: var(--bg-card); color: white;">
+            <div class="modal-header border-secondary">
+                <h6 class="modal-title fw-bold">Atribuir Resultado</h6>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body d-flex flex-column gap-2 text-center">
+                <label id="lblP1" class="small text-secondary fw-bold"></label>
+                <input type="number" id="inpP1" class="form-control form-control-custom text-center" value="2">
+                <label id="lblP2" class="small text-secondary fw-bold mt-2"></label>
+                <input type="number" id="inpP2" class="form-control form-control-custom text-center" value="0">
+                <div class="form-check text-start mt-2">
+                    <input class="form-check-input" type="checkbox" id="chkWO">
+                    <label class="form-check-label small text-danger" for="chkWO">Aplicar vitoria por W.O.</label>
+                </div>
+            </div>
+            <div class="modal-footer border-secondary">
+                <button type="button" class="btn btn-sm btn-accent w-100" onclick="confirmarPlacarPartida()">Confirmar Placar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Autenticacao -->
+<div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-secondary" style="background-color: var(--bg-card); color: white;">
+            <div class="modal-header border-secondary">
+                <h6 class="modal-title fw-bold">Autenticacao de Usuario</h6>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body row g-3">
+                <div class="col-md-6">
+                    <h6 class="small fw-bold text-warning mb-2">Entrar na plataforma</h6>
+                    <form action="/login" method="post" class="d-grid gap-2">
+                        <input type="email" name="email" class="form-control form-control-custom" placeholder="E-mail" required>
+                        <input type="password" name="senha" class="form-control form-control-custom" placeholder="Senha" required>
+                        <button type="submit" class="btn btn-sm btn-accent w-100">Acessar Plataforma</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h6 class="small fw-bold text-info mb-2">Criar conta</h6>
+                    <form action="/cadastrar" method="post" class="d-grid gap-2">
+                        <input type="text" name="nome" class="form-control form-control-custom" placeholder="Seu nome" required>
+                        <input type="text" name="nick" class="form-control form-control-custom" placeholder="Nickname" required>
+                        <input type="email" name="email" class="form-control form-control-custom" placeholder="E-mail" required>
+                        <input type="password" name="senha" class="form-control form-control-custom" placeholder="Senha" required>
+                        <input type="text" name="discord" class="form-control form-control-custom" placeholder="Discord (opcional)">
+                        <button type="submit" class="btn btn-sm btn-outline-warning w-100">Criar conta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
