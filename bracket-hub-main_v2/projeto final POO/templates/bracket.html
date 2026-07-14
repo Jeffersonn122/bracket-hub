@@ -1,0 +1,58 @@
+<!-- templates/bracket.html - Bracket sem emojis -->
+
+<div class="moderator-panel">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h6 class="small text-info fw-bold mb-0">Painel do Moderador</h6>
+        <span class="slot-chat-pill">Chat ativo</span>
+    </div>
+    <div id="painelModeradorConteudo" class="small text-secondary">Acompanhe as conversas dos slots aqui.</div>
+</div>
+
+<h6 class="small text-white fw-bold mb-2 uppercase tracking-wide">Fluxo da Bracket</h6>
+<div class="bracket-flow" id="winnersBracketContainer">
+    <!-- Fase 1: Top 16 (8 partidas) -->
+    <div class="bracket-column" id="phase-1-col">
+        <div class="bracket-round-title">Top 16</div>
+        <div id="phase-1-matches"></div>
+    </div>
+    
+    <!-- Fase 2: Top 8 (4 partidas) -->
+    <div class="bracket-column" id="phase-2-col">
+        <div class="bracket-round-title">Top 8</div>
+        <div id="phase-2-matches"></div>
+    </div>
+    
+    <!-- Fase 3: Top 4 (2 partidas) -->
+    <div class="bracket-column" id="phase-3-col">
+        <div class="bracket-round-title">Top 4</div>
+        <div id="phase-3-matches"></div>
+    </div>
+    
+    <!-- Fase 4: Final (1 partida) -->
+    <div class="bracket-column" id="phase-4-col">
+        <div class="bracket-round-title">Final</div>
+        <div id="phase-4-matches"></div>
+    </div>
+    
+    <!-- Bracket Reset (Final extra) -->
+    <div class="bracket-column d-none" id="grandFinalResetCol">
+        <span class="text-danger small">Grand Final Bracket Reset</span>
+        <div class="bracket-match-node" id="f-match-2" onclick="abrirModalPlacar('f-match-2')">
+            <div class="d-flex justify-content-between align-items-start gap-2">
+                <div class="flex-grow-1">
+                    <div class="text-white small d-flex justify-content-between"><span class="slot-player" id="f-m2-p1">Aguardando</span> <strong id="f-m2-s1">0</strong></div>
+                    <div class="text-white small d-flex justify-content-between"><span class="slot-player" id="f-m2-p2">Aguardando</span> <strong id="f-m2-s2">0</strong></div>
+                </div>
+                <div class="match-live-controls">
+                    <button type="button" class="live-square-btn" data-live-toggle="f-match-2" onclick="event.stopPropagation(); alternarMenuLive('f-match-2')">LIVE</button>
+                    <button type="button" class="live-square-btn" onclick="event.stopPropagation(); abrirChatMatch('f-match-2')" title="Abrir chat do slot">CHAT</button>
+                    <div class="live-menu d-none" id="menu-live-f-match-2">
+                        <button type="button" onclick="event.stopPropagation(); marcarPartidaLive('f-match-2')">Marcar em live</button>
+                        <button type="button" onclick="event.stopPropagation(); chamarModeracao('f-match-2')">Chamar moderacao</button>
+                        <button type="button" onclick="event.stopPropagation(); adicionarJogadorLive('f-match-2')">Adicionar jogadores à live</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

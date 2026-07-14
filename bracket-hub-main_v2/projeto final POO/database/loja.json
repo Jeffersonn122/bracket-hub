@@ -1,0 +1,10 @@
+[
+    {"id": 1, "nome": "Camiseta Oficial", "preco": "R$ 79,90", "preco_num": 79.90, "img": "👕", "descricao": "Camiseta exclusiva do evento"},
+    {"id": 2, "nome": "Mousepad Speed", "preco": "R$ 45,00", "preco_num": 45.00, "img": "🖱️", "descricao": "Mousepad profissional para e-sports"},
+    {"id": 3, "nome": "Chaveiro SF6", "preco": "R$ 15,00", "preco_num": 15.00, "img": "🔑", "descricao": "Chaveiro colecionavel do Street Fighter 6"},
+    {"id": 4, "nome": "Headset Gamer Pro", "preco": "R$ 299,90", "preco_num": 299.90, "img": "🎧", "descricao": "Headset com som surround 7.1"},
+    {"id": 5, "nome": "Teclado Mecanico RGB", "preco": "R$ 199,90", "preco_num": 199.90, "img": "⌨️", "descricao": "Teclado mecanico com iluminacao RGB"},
+    {"id": 6, "nome": "Capa de Celular", "preco": "R$ 35,00", "preco_num": 35.00, "img": "📱", "descricao": "Capa protetora personalizada"},
+    {"id": 7, "nome": "Caneca Gamer", "preco": "R$ 25,00", "preco_num": 25.00, "img": "☕", "descricao": "Caneca termica com logo do evento"},
+    {"id": 8, "nome": "Pulseira LED", "preco": "R$ 12,00", "preco_num": 12.00, "img": "💡", "descricao": "Pulseira iluminada para eventos"}
+]
